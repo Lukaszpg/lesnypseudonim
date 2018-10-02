@@ -5,7 +5,10 @@
 	'Opasły',
 	'Głodny',
 	'Elegancki',
-	'Oporowy'
+	'Oporowy',
+	'Dziarski',
+	'Rączy',
+	'Krwiożerczy'
 ];
 
 var second = [
@@ -13,7 +16,9 @@ var second = [
 	'Świniak',
 	'Jeż',
 	'Wilk',
-	'Sarna'
+	'Żbik',
+	'Wróbel',
+	'Kornik'
 ];
 
 var globalMessages = [];
