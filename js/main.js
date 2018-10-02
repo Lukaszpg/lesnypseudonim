@@ -3,4 +3,5 @@ $(document).ready(function() {
 });
 
 var getRandomNickname = function() {
+	$("#nick").append('lalala');
 };
