@@ -12,7 +12,12 @@
 	'Szalony',
 	'Mocny',
 	'Ambitny',
-	'Wynaturzony'
+	'Wynaturzony',
+	'Słony',
+	'Rozochocony',
+	'Ekwilibrystyczny',
+	'Szarmancki',
+	'Zuchwały'
 ];
 
 var second = [
@@ -133,4 +138,10 @@ var Messenger = function(el){
 $(document).ready(function() {
 	globalMessages.push(getRandomNickname());
 	var messenger = new Messenger($('#messenger'));
+	
+	$("#reroll").on('click', function() {
+		globalMessages = [];
+		globalMessages.push(getRandomNickname());
+		messenger = new Messenger($('#messenger'));
+	});
 });
