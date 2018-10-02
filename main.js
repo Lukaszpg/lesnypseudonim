@@ -1,24 +1,34 @@
 ﻿var first = [
 	'Święty',
 	'Pijany',
-	'Upalony',
 	'Opasły',
 	'Głodny',
 	'Elegancki',
-	'Oporowy',
 	'Dziarski',
 	'Rączy',
-	'Krwiożerczy'
+	'Krwiożerczy',
+	'Energiczny',
+	'Bohaterski',
+	'Szalony',
+	'Mocny',
+	'Ambitny',
+	'Wynaturzony'
 ];
 
 var second = [
 	'Borsuk',
-	'Świniak',
+	'Dzik',
 	'Jeż',
 	'Wilk',
 	'Żbik',
 	'Wróbel',
-	'Kornik'
+	'Kornik',
+	'Łoś',
+	'Kaban',
+	'Chrząszcz',
+	'Jeleń',
+	'Kociołek',
+	'Niedźwiedź'
 ];
 
 var globalMessages = [];
