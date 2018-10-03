@@ -73,3 +73,7 @@ body {
 .text-footer a {
 	color: #cdcdcd;
 }
+
+#modalBrowser {
+	color: #000 !important;
+}

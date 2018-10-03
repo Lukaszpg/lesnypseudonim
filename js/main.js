@@ -101,11 +101,16 @@ var Messenger = function(el){
 }
 
 $(document).ready(function() {
-	getAdjectives();
 	
-	$("#reroll").on('click', function() {
-		rollNick();
-	});
+	if(detectBrowser()) {
+		$("#modalBrowser").modal('show')
+	} else {
+		getAdjectives();
+		
+		$("#reroll").on('click', function() {
+			rollNick();
+		});		
+	}
 });
 
 var getAdjectives = function() {
@@ -132,4 +137,18 @@ var rollNick = function() {
 	globalMessages = [];
 	globalMessages.push(getRandomNickname());
 	messenger = new Messenger($('#messenger'));
+}
+
+var detectBrowser = function () {
+	var ua = window.navigator.userAgent;
+
+	var msie = ua.indexOf('MSIE ');
+	var trident = ua.indexOf('Trident/');
+	var edge = ua.indexOf('Edge/');
+	
+	if (msie > 0 || trident > 0 || edge > 0)  {
+		return true;
+	}
+
+	return false;
 }
