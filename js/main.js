@@ -1,42 +1,7 @@
-﻿var first = [
-	'Święty',
-	'Pijany',
-	'Opasły',
-	'Głodny',
-	'Elegancki',
-	'Dziarski',
-	'Rączy',
-	'Krwiożerczy',
-	'Energiczny',
-	'Bohaterski',
-	'Szalony',
-	'Mocny',
-	'Ambitny',
-	'Wynaturzony',
-	'Słony',
-	'Rozochocony',
-	'Ekwilibrystyczny',
-	'Szarmancki',
-	'Zuchwały'
-];
-
-var second = [
-	'Borsuk',
-	'Dzik',
-	'Jeż',
-	'Wilk',
-	'Żbik',
-	'Wróbel',
-	'Kornik',
-	'Łoś',
-	'Kaban',
-	'Chrząszcz',
-	'Jeleń',
-	'Kociołek',
-	'Niedźwiedź'
-];
-
-var globalMessages = [];
+﻿var first;
+var second;
+var globalMessages;
+var messenger;
 
 var getRandomNickname = function() {
 	var firstRandom = randomBetween(0, first.length);
@@ -136,12 +101,35 @@ var Messenger = function(el){
 }
 
 $(document).ready(function() {
-	globalMessages.push(getRandomNickname());
-	var messenger = new Messenger($('#messenger'));
+	getAdjectives();
 	
 	$("#reroll").on('click', function() {
-		globalMessages = [];
-		globalMessages.push(getRandomNickname());
-		messenger = new Messenger($('#messenger'));
+		rollNick();
 	});
 });
+
+var getAdjectives = function() {
+	$.ajax({
+        url: 'files/przym.txt',
+        success: function (result) {
+			first = result.split('\n');
+			getNouns();
+        },
+    });
+};
+
+var getNouns = function() {
+	$.ajax({
+        url: 'files/rzecz.txt',
+        success: function (result) {
+			second = result.split('\n');
+			rollNick();
+        },
+    });
+}
+
+var rollNick = function() {
+	globalMessages = [];
+	globalMessages.push(getRandomNickname());
+	messenger = new Messenger($('#messenger'));
+}
